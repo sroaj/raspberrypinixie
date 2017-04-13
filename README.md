@@ -12,13 +12,32 @@ import raspberrypinixie
 try:
     raspberrypinixie.setup()
 
-    # Turn all LED on
-    raspberrypinixie.led_set(True, True, True, True ,True ,True)
+    # Your code here
 
-    # Set Nixie tubes
-    raspberrypinixie.nixie_set(1, 2, 3, 4 ,5 ,6)
 finally:
-    raspberrypinixie.cleanup(clear_led=False, clear_nixie=False)
+    raspberrypinixie.cleanup()
+```
+
+Example operations are:
+
+```python
+# Turn all LED on
+raspberrypinixie.led_set(True, True, True, True ,True ,True)
+
+# Set Nixie tubes
+raspberrypinixie.nixie_set(1, 2, 3, 4 ,5 ,6)
+
+# Turn only the middle 2 LED on
+raspberrypinixie.led_set(led3=True, led4=True)
+
+# Turn only the middle 2 Nixie Tube on
+raspberrypinixie.nixie_set(nixie3=9, nixie4=0)
+
+# Turn all LED off
+raspberrypinixie.led_set()
+
+# Turn Nixie tubes off
+raspberrypinixie.nixie_set()
 ```
 
 This repository was created by measuring the signals on the PCB when each
