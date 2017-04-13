@@ -49,14 +49,18 @@ as follows:
 Auto test program
 ------------------------------------------------------------------------------
 
-To run the Auto test program, execute the following:
+The Auto test program will cycle every nixie tube from 0 to 9 once a second 
+(by default) as well as turn each led off and on one by one.
 
 ```bash
 # The library module can be executed to start the Auto test program:
 sudo python raspberrypinixie.py
 
-# The Auto test program has various options:
-sudo python raspberrypinixie.py --delay 0.1 --nixie-off-test --led-mode ON
+# The Auto test program can also turn Nixie tubes off in the cycle:
+sudo python raspberrypinixie.py --nixie-off-test
+
+# The cycle speed and led behavior can be changed via these options
+sudo python raspberrypinixie.py --delay 0.1 --led-mode ON
 
 # To see additional options:
 python raspberrypinixie.py --help
