@@ -1,12 +1,10 @@
-Raspberry Pi Nixie Tube Driver led and nixie controller
+Raspberry Pi Nixie Tube Driver library
 =============================================================================
 
-This Raspberry Pi Nixie Tube Driver is for the board from this kickstarter:
+This Raspberry Pi LED and Nixie Tube driver library is for the board from this kickstarter:
 https://www.kickstarter.com/projects/36162341/raspberry-pi-nixie-tube-driver
 
-
-This repository contains the python library that was created from reading the
-pins on the PCB. The library should be usable in the following manner:
+ This library usable in code as follows:
 
 ```python
 import raspberrypinixie
@@ -22,6 +20,9 @@ try:
 finally:
     raspberrypinixie.cleanup(clear_led=False, clear_nixie=False)
 ```
+
+This repository was created by measuring the signals on the PCB when each
+Raspberry Pi pin was asserted.
 
 This repository also contains a couple of sample programs using the library
 as follows:
