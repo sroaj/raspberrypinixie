@@ -1,0 +1,102 @@
+Legend:
+- Pin:  14#SER      ->  <pin number: 14>#<pin name: SER>
+- Wire: SR4|14#SER  ->  <target component SR14>|<connected pin number#name>
+- GND: Ground
+
+GPIO:
+- 06: GND
+- 08: SR1|12#RCLK, SR2|12#RCLK, SR3|12#RCLK
+- 11: SR1|14#SER
+- 12: SR1|11#SRCLK, SR2|11#SRCLK, SR3|11#SRCLK
+- 13: SR1:13#OE, SR2:13#OE, SR3:13#OE
+- 15: SR4|14#SER 
+- 16: SR4|11#SRCLK
+- 18: SR4|13#OE
+- 19: SR4|12#RCLK
+
+JP: // Jump points are exacly the same on left and right
+- 01: GPIO|18
+- 02: GPIO|19
+- 03: GPIO|16
+- 04: GPIO|15
+- 05: GPIO|13
+- 06: GPIO|08
+- 07: GPIO|12
+- 08: GPIO|11
+- 09: GND
+
+// Note 3.3V rails comes off R10 
+
+SR1: // BCD1 and BCD2
+ -  1#Qb:    BCD1|6#B
+ -  2#Qc:    BCD1|7#C
+ -  3#Qd:    BCD1|4#D
+ -  4#Qe:    BCD2|3#A
+ -  5#Qf:    BCD2|6#B
+ -  6#Qg:    BCD2|7#C
+ -  7#Qh:    BCD2|4#D
+ -  8#GND:   GND
+ -  9#Qh':   SR2|14#SER
+ - 10#SRCLR: 
+ - 11#SRCLK: GPIO|12
+ - 12#RCLK:  GPIO|08
+ - 13#OE:    GPIO|13
+ - 14#SER:   GPIO|11
+ - 15#Qa:    BCD1|3#A
+ - 16#Vcc: 3.3V
+
+SR2: // BCD3 and BCD4
+ -  1#Qb:    BCD3|6#B
+ -  2#Qc:    BCD3|7#C
+ -  3#Qd:    BCD3|4#D
+ -  4#Qe:    BCD4|3#A
+ -  5#Qf:    BCD4|6#B
+ -  6#Qg:    BCD4|7#C
+ -  7#Qh:    BCD4|4#D
+ -  8#GND:   GND
+ -  9#Qh':   SR3|14#SER
+ - 10#SRCLR: 
+ - 11#SRCLK: GPIO|12
+ - 12#RCLK:  GPIO|08
+ - 13#OE:    GPIO|13
+ - 14#SER:   SR1|9#Qh'
+ - 15#Qa:    BCD3|3#A
+ - 16#Vcc: 3.3V
+
+SR3: // BCD5 and BCD6
+ -  1#Qb:    BCD5|6#B
+ -  2#Qc:    BCD5|7#C
+ -  3#Qd:    BCD5|4#D
+ -  4#Qe:    BCD6|3#A
+ -  5#Qf:    BCD6|6#B
+ -  6#Qg:    BCD6|7#C
+ -  7#Qh:    BCD6|4#D
+ -  8#GND:   GND
+ -  9#Qh':
+ - 10#SRCLR: 
+ - 11#SRCLK: GPIO|12
+ - 12#RCLK:  GPIO|08
+ - 13#OE:    GPIO|13
+ - 14#SER:   SR2|9#Qh'
+ - 15#Qa:    BCD5|3#A
+ - 16#Vcc: 3.3V
+ 
+SR4: // The LED controller
+ -  1#Qb:    Q12|3#Base
+ -  2#Qc:    Q13|3#Base
+ -  3#Qd:    Q14|3#Base
+ -  4#Qe:    Q15|3#Base
+ -  5#Qf:    Q16|3#Base
+ -  6#Qg:
+ -  7#Qh:
+ -  8#GND:   GND
+ -  9#Qh': 
+ - 10#SRCLR: 
+ - 11#SRCLK: GPIO|16
+ - 12#RCLK:  GPIO|19
+ - 13#OE:    GPIO|18
+ - 14#SER:   GPIO|15
+ - 15#Qa:    Q11|3#Base
+ - 16#Vcc: 3.3V
+
+ 
